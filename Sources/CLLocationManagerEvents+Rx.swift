@@ -41,6 +41,9 @@ extension Reactive where Base: CLLocationManager {
             .map { $0 }
             .unwrap()
     }
+    
+    /// Reactive Observable for CLPlacemark with a given locale
+    @available(iOS 11.0, OSX 10.13, watchOSApplicationExtension 4.0, tvOS 11.0, *)
     /// Reactive Observable for `showsBackgroundLocationIndicator`
     public var showsBackgroundLocationIndicator: Observable<Bool> {
         return self.observe(Bool.self, .showsBackgroundLocationIndicator)
